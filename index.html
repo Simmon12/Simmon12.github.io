@@ -169,28 +169,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="理解-Prototype-js的bind-函数"><a href="#理解-Prototype-js的bind-函数" class="headerlink" title="理解 Prototype.js的bind()函数"></a>理解 Prototype.js的bind()函数</h3><p>fun.bind(this,arg1,arg2)<br>bind()方法会创建一个新的函数，称为绑定函数，fun方法在this环境下调用(这里的this可以绑定到任意对象),该方法可传入连个参数，第一个参数作为this，第二个及以后的参数则作为函数的参数调用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The .bind method from Prototype.js</span></div><div class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> fn = <span class="keyword">this</span>, args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>), object = args.shift();</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> fn.apply(object,</div><div class="line">        args.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>));</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="一-Array-slice-和shift-和concat"><a href="#一-Array-slice-和shift-和concat" class="headerlink" title="一.Array.slice()和shift()和concat()"></a>一.Array.slice()和shift()和concat()</h5><p>slice()有两种，一种是string.slice()，另外一种是Array.slice().在数组Array中，slice()能够基于当前数组中的一或多个项创建一个新数组。它可以接受一个或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下，slice()方法返回从该参数指定位置到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项，<font color="red">但不包括结束位置的项，</font><em>注意，slice()方法不会影响原始数组</em><br>shift()指删除一个数组最前面的值，并且放回删除值.<br>concat()可以基于当前数组中的所有项创建一个新数组。具体来说，这个方法会先创建当前一个数组的副本，然后接收到的参数添加到这个副本的末尾，最后返回新构建的数组。  </p>
-<pre><code class="javascript"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"yellow"</span>, <span class="string">"purple"</span>];
-<span class="keyword">var</span> color1 = colors.concat(<span class="string">"yellow"</span>,[<span class="string">"black"</span>,<span class="string">"brown"</span>]);
-<span class="keyword">var</span> colors2 = colors.slice(<span class="number">1</span>); 
-<span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>);
-alert(color1);         <span class="comment">//red,green,blue,yellow,purple,yellow,black,brown</span>
-alert(colors2);        <span class="comment">//green,blue,yellow,purple</span>
-alert(colors3);        <span class="comment">//green,blue,yellow</span>
-alert(colors);         <span class="comment">//red,green,blue,yellow,purple</span>
-</code></pre>
-<h5 id="二-call-和apply"><a href="#二-call-和apply" class="headerlink" title="二.call()和apply()"></a>二.call()和apply()</h5><p>call()和apply()方法主要是用来扩充函数的作用域(把第一个参数作为自己的this)<br>call()和apply()方法接收两个参数:<br>apply():第一个参数是作用域，第二个是参数数组，其中第二个参数可以是数组实例，也可以是arguments对象。<br>call():参数方式与apply一致，<font color="red">区别在于:传参的方式不同，其参数必须逐个写入</font></p>
-<h5 id="三-Array-prototype-slice-call-arguments"><a href="#三-Array-prototype-slice-call-arguments" class="headerlink" title="三.Array.prototype.slice.call(arguments)"></a>三.Array.prototype.slice.call(arguments)</h5><p>arguments是一个关键字，代表当前参数，在Javascript中虽然arguments表面上以数组形式来表示，但实际上没有原生slice的功能，所以要使用call方法算是对arguments对象不完整数组功能的修正。<br>Array.prototype.slice.call(arguments) === Array.prototype.slice.call(arguments,0)<br>Array.prototype.slice调用的是Array的原型方法，对于真正的数组是有slice()方法，但是对于像arguments或者自己定义的一些类数组对象虽然存在length等若干属性，但是并没有slice()方法，所以对于这种类数组对象就得使用原型方法来使用slice()方法，即Array.prototype.slice.(如果在自定义中的类数组对象中自定义了slice()方法，就可以自然地直接调用了)。<br>因此，Array.prototype.slice.call(arguments,0)可以理解为：对于arguments类数组，我们调用Array.prototype.slice原型方法，并用call()方法将作用域限定在arguments中，此时：Array.prototype === arguments, 用参数0位slice()方法中地第一个参数，即开始位置索引，_通过这种方法就将arguments类数组转换位了真数组。  </p>
-<pre><code class="javascript"><span class="keyword">var</span> a = {
-    <span class="attr">length</span>: <span class="number">2</span>,
-    <span class="number">0</span>: <span class="string">'first'</span>,
-    <span class="number">1</span>: <span class="string">'second'</span>
-};
-<span class="built_in">Array</span>.prototype.slice.call(a);    <span class="comment">//["first","second"]</span>
-<span class="keyword">var</span> a = {<span class="attr">length</span>: <span class="number">2</span>};
-<span class="built_in">Array</span>.prototype.slice.call(a);    <span class="comment">//["undefined","undefined"]</span>
-</code></pre>
-
+        
+          <a class="article-more-a" href="/2017/03/16/javascript练习分析/#more">more >></a>
+        
       
 
       
@@ -514,7 +495,7 @@ alert(colors);         <span class="comment">//red,green,blue,yellow,purple</spa
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +503,11 @@ alert(colors);         <span class="comment">//red,green,blue,yellow,purple</spa
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
             
             <div class="clearfix"></div>
