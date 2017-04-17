@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://simmon12.github.io/2017/04/02/原型/index.html">
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
-<meta property="og:updated_time" content="2017-04-02T16:21:59.000Z">
+<meta property="og:updated_time" content="2017-04-03T06:06:12.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 练习分析(四)">
 <meta name="twitter:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
@@ -168,7 +168,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="对原型练习的理解"><a href="#对原型练习的理解" class="headerlink" title="对原型练习的理解"></a>对原型练习的理解</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ninja</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> ninja = <span class="keyword">new</span> Ninja();</div><div class="line">assert(<span class="keyword">typeof</span> ninja == <span class="string">"object"</span>, <span class="string">"However the type of the instance is still an object"</span>);</div><div class="line">assert(ninja <span class="keyword">instanceof</span> Ninja, <span class="string">"The object was instantiated properly."</span>);</div><div class="line">assert(ninja.constructor == Ninja, <span class="string">"The ninja object was created by the Ninja  function"</span>);</div></pre></td></tr></table></figure>
-<h5 id="知识点分析"><a href="#知识点分析" class="headerlink" title="知识点分析"></a>知识点分析</h5><p>1.创建对象之构造函数模式</p>
+<h5 id="知识点分析"><a href="#知识点分析" class="headerlink" title="知识点分析"></a>知识点分析</h5><a id="more"></a>
+<p>1.创建对象之构造函数模式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</div><div class="line">   <span class="keyword">this</span>.name = name;</div><div class="line">   <span class="keyword">this</span>.age = age;</div><div class="line">   <span class="keyword">this</span>.job = job;</div><div class="line">   <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="keyword">this</span>.name);    </div><div class="line">   &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"ss"</span>, <span class="number">20</span>, <span class="string">"software Engineer"</span>);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>注意: 函数名Person使用的是大写字母P，按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头，并且构造函数本身也是函数，只不过用于创建对象而已。</p>
@@ -284,6 +285,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/04/07/Git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/03/21/javascript练习分析-三/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">javascript练习分析-三</div>
@@ -388,6 +398,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
