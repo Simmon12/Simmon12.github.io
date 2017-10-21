@@ -148,6 +148,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-原型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/02/原型/">javascript 练习分析(四)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/02/原型/" class="archive-article-date">
+  	<time datetime="2017-04-02T11:04:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="对原型练习的理解"><a href="#对原型练习的理解" class="headerlink" title="对原型练习的理解"></a>对原型练习的理解</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ninja</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> ninja = <span class="keyword">new</span> Ninja();</div><div class="line">assert(<span class="keyword">typeof</span> ninja == <span class="string">"object"</span>, <span class="string">"However the type of the instance is still an object"</span>);</div><div class="line">assert(ninja <span class="keyword">instanceof</span> Ninja, <span class="string">"The object was instantiated properly."</span>);</div><div class="line">assert(ninja.constructor == Ninja, <span class="string">"The ninja object was created by the Ninja  function"</span>);</div></pre></td></tr></table></figure>
+<h5 id="知识点分析"><a href="#知识点分析" class="headerlink" title="知识点分析"></a>知识点分析</h5>
+        
+          <a class="article-more-a" href="/2017/04/02/原型/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/02/原型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript练习分析-三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/21/javascript练习分析-三/">javascript练习分析-三</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/21/javascript练习分析-三/" class="archive-article-date">
+  	<time datetime="2017-03-21T02:59:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Closures-闭包"><a href="#Closures-闭包" class="headerlink" title="Closures(闭包)"></a>Closures(闭包)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> n = <span class="number">999</span>;</div><div class="line">    nAdd = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;n+=<span class="number">1</span>&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123; alert(n)&#125;;</div><div class="line">    <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result = f1();</div><div class="line">result();      <span class="comment">// 999;</span></div><div class="line">nAdd();</div><div class="line">result();      <span class="comment">//1000;</span></div><div class="line">nAdd();</div><div class="line">result();      <span class="comment">//1001;</span></div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/03/21/javascript练习分析-三/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/21/javascript练习分析-三/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-常见函数模板总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -339,134 +468,6 @@
 
 
   
-    <article id="post-图解HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/图解HTTP/">图解HTTP</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/05/图解HTTP/" class="archive-article-date">
-  	<time datetime="2017-03-05T07:00:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="《图解HTTP》-读书笔记之网络基础TCP-IP"><a href="#《图解HTTP》-读书笔记之网络基础TCP-IP" class="headerlink" title="《图解HTTP》 读书笔记之网络基础TCP/IP"></a>《图解HTTP》 读书笔记之网络基础TCP/IP</h3><p>计算机与网络设备要相互通信，双方就必须基于相同的方法，这些方法需要同一种规则，这种规则即称为协议。 像这样把与互联网相关联的协议集合起来总称为TCP/IP。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTTP协议</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/05/图解HTTP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/07/我的第一篇博客/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/07/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2017-02-07T08:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://github.com/Simmon12/MyPicture/blob/master/hope.jpg?raw=true" alt="希望"></p>
-<p>首先我必须说一点，从小到大我都觉得我的语言组织能力很差，怎么说呢？通常情况下，我会把<br>一件事情说的特别的冗长，后来我仔细地想了想，其实这并不能完全怪我，要怪就得怪那万恶的<br>高考语文作文，说了那么久的废话，我来谈谈正话，其实也不能算是正话，这篇文章的主要目的<br>其实就是随便谈谈而已。</p>
-<p>我很开心，为什么呢？因为我终于拥有了一篇属于自己的博客啦，我从大一的时候就一直希望自
-        
-          <a class="article-more-a" href="/2017/02/07/我的第一篇博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/07/我的第一篇博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -564,10 +565,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -576,11 +573,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
              
               <li class="article-tag-list-item">

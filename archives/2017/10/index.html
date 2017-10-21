@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>javascript 练习分析(四) | MyBlog</title>
+  <title>Archives: 2017/10 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
-<meta property="og:type" content="article">
-<meta property="og:title" content="javascript 练习分析(四)">
-<meta property="og:url" content="https://simmon12.github.io/2017/04/02/原型/index.html">
+  <meta name="description" content="from 前端学渣一名">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://simmon12.github.io/archives/2017/10/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
-<meta property="og:updated_time" content="2017-04-03T06:06:12.361Z">
+<meta property="og:description" content="from 前端学渣一名">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 练习分析(四)">
-<meta name="twitter:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="from 前端学渣一名">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,171 +146,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-原型" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      javascript 练习分析(四)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/21/MVVM框架/" class="archive-article-date">
+  	<time datetime="2017-10-21T03:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/21/MVVM框架/">MVVM框架</a>
     </h1>
   
 
-        
-        <a href="/2017/04/02/原型/" class="archive-article-date">
-  	<time datetime="2017-04-02T11:04:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="对原型练习的理解"><a href="#对原型练习的理解" class="headerlink" title="对原型练习的理解"></a>对原型练习的理解</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ninja</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> ninja = <span class="keyword">new</span> Ninja();</div><div class="line">assert(<span class="keyword">typeof</span> ninja == <span class="string">"object"</span>, <span class="string">"However the type of the instance is still an object"</span>);</div><div class="line">assert(ninja <span class="keyword">instanceof</span> Ninja, <span class="string">"The object was instantiated properly."</span>);</div><div class="line">assert(ninja.constructor == Ninja, <span class="string">"The ninja object was created by the Ninja  function"</span>);</div></pre></td></tr></table></figure>
-<h5 id="知识点分析"><a href="#知识点分析" class="headerlink" title="知识点分析"></a>知识点分析</h5><a id="more"></a>
-<p>1.创建对象之构造函数模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</div><div class="line">   <span class="keyword">this</span>.name = name;</div><div class="line">   <span class="keyword">this</span>.age = age;</div><div class="line">   <span class="keyword">this</span>.job = job;</div><div class="line">   <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="keyword">this</span>.name);    </div><div class="line">   &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"ss"</span>, <span class="number">20</span>, <span class="string">"software Engineer"</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意: 函数名Person使用的是大写字母P，按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头，并且构造函数本身也是函数，只不过用于创建对象而已。</p>
-</blockquote>
-<p>创建Person的新实例，必须使用new操作符，若var person1 = Person(), 则person1是undefined。person1对象有一个constructor(构造函数)属性，该属性指向Person。准确来说constructor属性关联的就是当初创建这个对象实例的构造函数。 所以在开篇代码中ninja.constructor == Ninja。</p>
-<ol>
-<li><strong>typeof  ninja == “object”</strong>  其中 typeof是一个操作符，用来测定给定变量的数据类型。<br> “undefined” — 如果这个值未定义<br> “boolen”  ——–如果这个值是布尔值<br> “string”———-如果这个值是字符串<br> “number”——–如果这个值是数字<br> “object”———-如果这个值是对象或null<br> ”function“——-如果这个值是函数<br> <strong>ninja instanceof Ninja</strong> ,其中instanceof运算符用来测试一个对象在其原型链中是否存在一个构造函数的prototype属性.<br> 语法:<blockquote>
-<p>object instanceof constructor<br> object : 要检测的对象<br> constructor: 某个构造函数</p>
-</blockquote>
-</li>
-</ol>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/04/02/原型/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/07/Git/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/03/21/javascript练习分析-三/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript练习分析-三</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -334,8 +211,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

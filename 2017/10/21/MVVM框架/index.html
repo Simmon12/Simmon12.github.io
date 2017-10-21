@@ -6,18 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>javascript 练习分析(四) | MyBlog</title>
+  <title>MVVM框架 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
+  <meta name="description" content="MVVM框架笔记
+MVVM的英文全称为：Model-View-ViewModel
+核心为：数据模型的数据双向绑定
+
+
+主要包括一下三个部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 练习分析(四)">
-<meta property="og:url" content="https://simmon12.github.io/2017/04/02/原型/index.html">
+<meta property="og:title" content="MVVM框架">
+<meta property="og:url" content="https://simmon12.github.io/2017/10/21/MVVM框架/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
-<meta property="og:updated_time" content="2017-04-03T06:06:12.361Z">
+<meta property="og:description" content="MVVM框架笔记
+MVVM的英文全称为：Model-View-ViewModel
+核心为：数据模型的数据双向绑定
+
+
+主要包括一下三个部分">
+<meta property="og:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/MVVM.png">
+<meta property="og:updated_time" content="2017-10-21T04:18:33.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 练习分析(四)">
-<meta name="twitter:description" content="对原型练习的理解12345function Ninja() &amp;#123;&amp;#125;var ninja = new Ninja();assert(typeof ninja == &quot;object&quot;, &quot;However the type of the instance is still an object&quot;);assert(ninja instanceof Ninja, &quot;The object was">
+<meta name="twitter:title" content="MVVM框架">
+<meta name="twitter:description" content="MVVM框架笔记
+MVVM的英文全称为：Model-View-ViewModel
+核心为：数据模型的数据双向绑定
+
+
+主要包括一下三个部分">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/MVVM.png">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,40 +164,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-原型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MVVM框架" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      javascript 练习分析(四)
+      MVVM框架
     </h1>
   
 
         
-        <a href="/2017/04/02/原型/" class="archive-article-date">
-  	<time datetime="2017-04-02T11:04:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
+        <a href="/2017/10/21/MVVM框架/" class="archive-article-date">
+  	<time datetime="2017-10-21T03:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="对原型练习的理解"><a href="#对原型练习的理解" class="headerlink" title="对原型练习的理解"></a>对原型练习的理解</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ninja</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> ninja = <span class="keyword">new</span> Ninja();</div><div class="line">assert(<span class="keyword">typeof</span> ninja == <span class="string">"object"</span>, <span class="string">"However the type of the instance is still an object"</span>);</div><div class="line">assert(ninja <span class="keyword">instanceof</span> Ninja, <span class="string">"The object was instantiated properly."</span>);</div><div class="line">assert(ninja.constructor == Ninja, <span class="string">"The ninja object was created by the Ninja  function"</span>);</div></pre></td></tr></table></figure>
-<h5 id="知识点分析"><a href="#知识点分析" class="headerlink" title="知识点分析"></a>知识点分析</h5><a id="more"></a>
-<p>1.创建对象之构造函数模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</div><div class="line">   <span class="keyword">this</span>.name = name;</div><div class="line">   <span class="keyword">this</span>.age = age;</div><div class="line">   <span class="keyword">this</span>.job = job;</div><div class="line">   <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     alert(<span class="keyword">this</span>.name);    </div><div class="line">   &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"ss"</span>, <span class="number">20</span>, <span class="string">"software Engineer"</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意: 函数名Person使用的是大写字母P，按照惯例，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头，并且构造函数本身也是函数，只不过用于创建对象而已。</p>
+        <h3 id="MVVM框架笔记"><a href="#MVVM框架笔记" class="headerlink" title="MVVM框架笔记"></a>MVVM框架笔记</h3><blockquote>
+<p>MVVM的英文全称为：Model-View-ViewModel</p>
+<p>核心为：数据模型的数据双向绑定</p>
 </blockquote>
-<p>创建Person的新实例，必须使用new操作符，若var person1 = Person(), 则person1是undefined。person1对象有一个constructor(构造函数)属性，该属性指向Person。准确来说constructor属性关联的就是当初创建这个对象实例的构造函数。 所以在开篇代码中ninja.constructor == Ninja。</p>
 <ol>
-<li><strong>typeof  ninja == “object”</strong>  其中 typeof是一个操作符，用来测定给定变量的数据类型。<br> “undefined” — 如果这个值未定义<br> “boolen”  ——–如果这个值是布尔值<br> “string”———-如果这个值是字符串<br> “number”——–如果这个值是数字<br> “object”———-如果这个值是对象或null<br> ”function“——-如果这个值是函数<br> <strong>ninja instanceof Ninja</strong> ,其中instanceof运算符用来测试一个对象在其原型链中是否存在一个构造函数的prototype属性.<br> 语法:<blockquote>
-<p>object instanceof constructor<br> object : 要检测的对象<br> constructor: 某个构造函数</p>
-</blockquote>
+<li><p>主要包括一下三个部分</p>
+<p><img src="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/MVVM.png" alt="MVVM"></p>
+<a id="more"></a>
+<p>ViewModel作为观察者的角色：</p>
+<ul>
+<li>当Model层数据发生变化，ViewModel能观察到数据发生的变化，然后通知对于的视图View作出变化</li>
+<li>当用户操作视图，ViewModel也能监听到视图的变化，然后通知数据Model作变动</li>
+<li>通过上述两种方式，实现 <strong>数据的双向绑定</strong></li>
+</ul>
 </li>
 </ol>
+<ol>
+<li>MVVM框架的优点</li>
+</ol>
+<ul>
+<li>针对有复杂交互逻辑的前端应用，可以省去许多手动触发DOM操作</li>
+<li>通过Ajax数据持久化，可以进行局部刷新</li>
+<li>常见的MVVM框架有：Angular.js ,      react.js       vue.js</li>
+</ul>
 
       
 
@@ -210,17 +237,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -271,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/04/02/原型/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/10/21/MVVM框架/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +301,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/07/Git/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/21/javascript练习分析-三/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript练习分析-三</div>
+    <a href="/2017/09/23/thought/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">thought</div>
       <i class="icon-circle-right"></i>
     </a>
   
