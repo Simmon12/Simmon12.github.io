@@ -148,6 +148,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Javascript练习分析-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/17/Javascript练习分析-二/">Javascript练习分析(二)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/17/Javascript练习分析-二/" class="archive-article-date">
+  	<time datetime="2017-03-17T06:26:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Function-笔记"><a href="#Function-笔记" class="headerlink" title="Function 笔记"></a>Function 笔记</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? ninja.yell(n<span class="number">-1</span>) + <span class="string">"a"</span> : <span class="string">"hiy"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(ninja.yell(<span class="number">4</span>))    <span class="comment">// hiyaaaa</span></div><div class="line"><span class="keyword">var</span> samurai = &#123; <span class="attr">yell</span>: ninja.yell &#125;;</div><div class="line"><span class="keyword">var</span> ninja = <span class="literal">null</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    samurai.yell(<span class="number">4</span>);</div><div class="line">&#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"mistake"</span>) </div><div class="line">&#125;                              <span class="comment">//mistake</span></div></pre></td></tr></table></figure>
+<h5 id="知识点梳理"><a href="#知识点梳理" class="headerlink" title="知识点梳理"></a>知识点梳理</h5>
+        
+          <a class="article-more-a" href="/2017/03/17/Javascript练习分析-二/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/17/Javascript练习分析-二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-javascript练习分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -523,11 +588,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">template</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+                <a href="javascript:void(0)" class="js-tag color4">template</a>
               </li>
             
             <div class="clearfix"></div>
