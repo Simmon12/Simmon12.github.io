@@ -6,29 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>JavaScript this决策树 | MyBlog</title>
+  <title>Archives: 2018/1 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
-
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript this决策树">
-<meta property="og:url" content="https://simmon12.github.io/2017/12/19/JavaScript-this决策树/index.html">
+  <meta name="description" content="from 前端学渣一名">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://simmon12.github.io/archives/2018/01/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
-
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
-<meta property="og:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg">
-<meta property="og:updated_time" content="2017-12-19T09:37:08.898Z">
+<meta property="og:description" content="from 前端学渣一名">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript this决策树">
-<meta name="twitter:description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
-
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="from 前端学渣一名">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -158,205 +146,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript-this决策树" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      JavaScript this决策树
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/26/Node入门-书总结/" class="archive-article-date">
+  	<time datetime="2018-01-26T13:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/26/Node入门-书总结/">&lt;&lt;Node入门&gt;&gt;书总结</a>
     </h1>
   
 
-        
-        <a href="/2017/12/19/JavaScript-this决策树/" class="archive-article-date">
-  	<time datetime="2017-12-19T03:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Javascript-this-到底指向什么？"><a href="#Javascript-this-到底指向什么？" class="headerlink" title="Javascript this 到底指向什么？"></a>Javascript this 到底指向什么？</h3><blockquote>
-<p>前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，<a href="http://www.cnblogs.com/isaboy/archive/2015/10/29/javascript_this.html" target="_blank" rel="external">原文地址</a></p>
-</blockquote>
-<p>不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因此，在不同的场景下，Js中的this所指向的对象是不同的。</p>
-<p>当函数的调用方式不同的时候，JavaScript中this不同，可以是全局对象，当前对象或者是任意的对象。JavaScript中函数调用的几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，使用apply或call调用。作者用了一张决策树图表解释了JavaScript this到底指向什么？<a id="more"></a></p>
-<p><img src="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg" alt=""></p>
-<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">y</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">moveTo</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x;</div><div class="line">        <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>point.moveTo()函数在“Javascript this 决策树”中的判定过程为：</p>
-<ol>
-<li>point.moveTo函数调用是用new进行调用么？不是，进入否分支，</li>
-<li>point.moveTo函数是用dot(.)进行调用的吗？是，进入是分支，所以这里的this指向dot之前的对象point, this.x实际上是point.x</li>
-</ol>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.x=x;</div><div class="line">&#125;</div><div class="line">func(<span class="number">5</span>);</div></pre></td></tr></table></figure>
-<ol>
-<li>func(5)函数调用是用new进行调用吗？不是，进入否分支</li>
-<li>func(5)函数调用是用dot(.)进行调用吗？否，进入否分支，所以这里的this指向全局变量window, 即this.x实际上是window.x</li>
-</ol>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">y</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">moveTo</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">        <span class="comment">//内部函数</span></div><div class="line">        <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.x = x;     <span class="comment">// this指向window</span></div><div class="line">        &#125;;</div><div class="line">        <span class="comment">// 内部函数</span></div><div class="line">        <span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.y = y;    <span class="comment">// this指向window</span></div><div class="line">        &#125;;</div><div class="line">        moveX(x);</div><div class="line">        moveY(y);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">point.moveTo(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">point.x;   <span class="comment">// =&gt;0</span></div><div class="line">point.y;   <span class="comment">// =&gt;0</span></div><div class="line">x;         <span class="comment">// =&gt;1;</span></div><div class="line">y;         <span class="comment">// =&gt;1</span></div></pre></td></tr></table></figure>
-<p>point.moveTo(1,1)函数内部调用的是moveX()和moveY()函数，这两个函数中的this指向判定过程</p>
-<ol>
-<li>moveX(1)函数调用是用new进行调用的么？不是，进入否分支</li>
-<li>moveX(1)函数使用用dot进行调用的吗，否，进入否分支，所以this指向全局window，所以this.x 实际上是window.x;</li>
-</ol>
-<hr>
-<p>下面看一个作为构造函数调用的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;      <span class="comment">// this　?</span></div><div class="line">    <span class="keyword">this</span>.y = y; 　　 <span class="comment">// this ?　</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> np = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">np.x;               <span class="comment">// 1</span></div><div class="line"><span class="keyword">var</span> p = Point(<span class="number">2</span>,<span class="number">2</span>);</div><div class="line">p.x;                <span class="comment">// error p是一个空对象undefined</span></div><div class="line"><span class="built_in">window</span>.x            <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
-<p>Point(1,1)函数在 <code>var np = new Point(1,1)</code>中this的决策过程</p>
-<ol>
-<li>var np = new Point(1,1)调用时用new调用么？是，进入是分支，this指向np</li>
-<li>所以这里this.x = np.x = 1;</li>
-</ol>
-<p>Point(2,2)在决策树的判决过程</p>
-<ol>
-<li>var p = Point(2, 2)调用是用new 进行调用么？不是，进入否分支，</li>
-<li>上述是用dot调用么？不是，进入否分支，所以this指向window，所以this.x = 2, 也就是window.x = 2</li>
-</ol>
-<hr>
-<p>最后是一个函数用call和apply进行调用的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">    <span class="keyword">this</span>.moveTo = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.x = x;</div><div class="line">        <span class="keyword">this</span>.x = y;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line"><span class="keyword">var</span> p2 = &#123;<span class="attr">x</span>:<span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>&#125;;</div><div class="line">p1.moveTo.apply(p2, [<span class="number">10</span>,<span class="number">10</span>]); <span class="comment">// apply实际上为p2.moveTo(10,10)</span></div><div class="line">p2.x; <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
-<p>p1.moveTo.apply(p2, [10,10])函数在”Javascript this 决策树”中进行判定的过程<br>首选，apply和call这两个方法异常强大，允许切换函数执行的上下文环境(context)， 即this绑定的对象。p1.moveTo.apply(p2, [10,10])实际上是p2.moveTo(10,10)，那么p2.moveTo(10,10)可解释为：</p>
-<ol>
-<li>p2.moveTo(10,10)函数调用时用new进行调用吗？不是，进入“否”分支</li>
-<li>函数是用dot调用吗是，进入是分支，这里的this指向dot前的对象p2, 所以 p2.x =10;</li>
-</ol>
-<p>原作者说道理解下一段话对于理解Javascript函数有很大的作用</p>
-<blockquote>
-<p>Javascript中的函数既可以被当做普通函数执行，也可以作为对象的方法执行，这是导致this含义如此丰富的主要原因。一个函数被执行的时候，会创建一个执行环境，函数的所有的行为均发生在此执行环境中，构建该执行环境时，JavaScript首先会创建arguments变量，其中包含调用函数时传入的参数。接下来创建作用域链。然后初始化变量，首先初始化函数的形参表，值为arguments变量中对应的值，如果arguments变量中没有对应值，则该形参初始化为undefined。如果该函数中含有内部函数，则初始化这些内部函数，如果没有，继续初始化该函数内定义的局部变量，<strong>需要注意的是此时这些变量初始化为undefined，其赋值操作在执行环境创建成功后，函数执行时才会执行，这点对于我们理解Javascript中的变量作用域非常重要</strong>，最后为this变量赋值，如前所述，会根据函数调用方式的不同，赋给this全局对象，当前对象等。至此，函数的执行环境创建成功，函数开始逐行执行，所需变量均从之前构建好的执行环境中读取。</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/12/19/JavaScript-this决策树/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/23/大三寒假/" class="archive-article-date">
+  	<time datetime="2018-01-23T07:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2018/01/23/大三寒假/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          大三寒假
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/19/大三上WEBProject项目总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大三上WEB Project项目总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/23/大三寒假/">大三寒假</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -379,8 +249,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

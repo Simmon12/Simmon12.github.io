@@ -6,29 +6,38 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>JavaScript this决策树 | MyBlog</title>
+  <title>&lt;&lt;Node入门&gt;&gt;书总结 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
+  <meta name="description" content="读《Node.js入门》的笔记
+虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，原文地址用node.js实现用户上传图片，然后我们将图片显示在浏览器中。完成需要以下四个文件
 
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
+index.js
+server.js
+router.js
+requestHandles.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript this决策树">
-<meta property="og:url" content="https://simmon12.github.io/2017/12/19/JavaScript-this决策树/index.html">
+<meta property="og:title" content="<<Node入门>>书总结">
+<meta property="og:url" content="https://simmon12.github.io/2018/01/26/Node入门-书总结/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
+<meta property="og:description" content="读《Node.js入门》的笔记
+虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，原文地址用node.js实现用户上传图片，然后我们将图片显示在浏览器中。完成需要以下四个文件
 
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
-<meta property="og:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg">
-<meta property="og:updated_time" content="2017-12-19T09:37:08.898Z">
+index.js
+server.js
+router.js
+requestHandles.js">
+<meta property="og:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Nodejs.png">
+<meta property="og:updated_time" content="2018-01-26T14:28:05.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript this决策树">
-<meta name="twitter:description" content="Javascript this 到底指向什么？
-前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，原文地址
+<meta name="twitter:title" content="<<Node入门>>书总结">
+<meta name="twitter:description" content="读《Node.js入门》的笔记
+虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，原文地址用node.js实现用户上传图片，然后我们将图片显示在浏览器中。完成需要以下四个文件
 
-不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg">
+index.js
+server.js
+router.js
+requestHandles.js">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Nodejs.png">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -158,74 +167,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript-this决策树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Node入门-书总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript this决策树
+      &lt;&lt;Node入门&gt;&gt;书总结
     </h1>
   
 
         
-        <a href="/2017/12/19/JavaScript-this决策树/" class="archive-article-date">
-  	<time datetime="2017-12-19T03:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/01/26/Node入门-书总结/" class="archive-article-date">
+  	<time datetime="2018-01-26T13:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Javascript-this-到底指向什么？"><a href="#Javascript-this-到底指向什么？" class="headerlink" title="Javascript this 到底指向什么？"></a>Javascript this 到底指向什么？</h3><blockquote>
-<p>前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，<a href="http://www.cnblogs.com/isaboy/archive/2015/10/29/javascript_this.html" target="_blank" rel="external">原文地址</a></p>
+        <h3 id="读《Node-js入门》的笔记"><a href="#读《Node-js入门》的笔记" class="headerlink" title="读《Node.js入门》的笔记"></a>读《Node.js入门》的笔记</h3><blockquote>
+<p>虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，<a href="https://www.nodebeginner.org/index-zh-cn.html#javascript-and-nodejs" target="_blank" rel="external">原文地址</a><br>用node.js实现用户上传图片，然后我们将图片显示在浏览器中。<br>完成需要以下四个文件</p>
+<ul>
+<li>index.js</li>
+<li>server.js</li>
+<li>router.js</li>
+<li>requestHandles.js<a id="more"></a></li>
+</ul>
 </blockquote>
-<p>不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因此，在不同的场景下，Js中的this所指向的对象是不同的。</p>
-<p>当函数的调用方式不同的时候，JavaScript中this不同，可以是全局对象，当前对象或者是任意的对象。JavaScript中函数调用的几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，使用apply或call调用。作者用了一张决策树图表解释了JavaScript this到底指向什么？<a id="more"></a></p>
-<p><img src="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Javascript_this.jpg" alt=""></p>
-<p>例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">y</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">moveTo</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x;</div><div class="line">        <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>point.moveTo()函数在“Javascript this 决策树”中的判定过程为：</p>
-<ol>
-<li>point.moveTo函数调用是用new进行调用么？不是，进入否分支，</li>
-<li>point.moveTo函数是用dot(.)进行调用的吗？是，进入是分支，所以这里的this指向dot之前的对象point, this.x实际上是point.x</li>
-</ol>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.x=x;</div><div class="line">&#125;</div><div class="line">func(<span class="number">5</span>);</div></pre></td></tr></table></figure>
-<ol>
-<li>func(5)函数调用是用new进行调用吗？不是，进入否分支</li>
-<li>func(5)函数调用是用dot(.)进行调用吗？否，进入否分支，所以这里的this指向全局变量window, 即this.x实际上是window.x</li>
-</ol>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">y</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">moveTo</span>: <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">        <span class="comment">//内部函数</span></div><div class="line">        <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.x = x;     <span class="comment">// this指向window</span></div><div class="line">        &#125;;</div><div class="line">        <span class="comment">// 内部函数</span></div><div class="line">        <span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.y = y;    <span class="comment">// this指向window</span></div><div class="line">        &#125;;</div><div class="line">        moveX(x);</div><div class="line">        moveY(y);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">point.moveTo(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">point.x;   <span class="comment">// =&gt;0</span></div><div class="line">point.y;   <span class="comment">// =&gt;0</span></div><div class="line">x;         <span class="comment">// =&gt;1;</span></div><div class="line">y;         <span class="comment">// =&gt;1</span></div></pre></td></tr></table></figure>
-<p>point.moveTo(1,1)函数内部调用的是moveX()和moveY()函数，这两个函数中的this指向判定过程</p>
-<ol>
-<li>moveX(1)函数调用是用new进行调用的么？不是，进入否分支</li>
-<li>moveX(1)函数使用用dot进行调用的吗，否，进入否分支，所以this指向全局window，所以this.x 实际上是window.x;</li>
-</ol>
-<hr>
-<p>下面看一个作为构造函数调用的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;      <span class="comment">// this　?</span></div><div class="line">    <span class="keyword">this</span>.y = y; 　　 <span class="comment">// this ?　</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> np = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">np.x;               <span class="comment">// 1</span></div><div class="line"><span class="keyword">var</span> p = Point(<span class="number">2</span>,<span class="number">2</span>);</div><div class="line">p.x;                <span class="comment">// error p是一个空对象undefined</span></div><div class="line"><span class="built_in">window</span>.x            <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
-<p>Point(1,1)函数在 <code>var np = new Point(1,1)</code>中this的决策过程</p>
-<ol>
-<li>var np = new Point(1,1)调用时用new调用么？是，进入是分支，this指向np</li>
-<li>所以这里this.x = np.x = 1;</li>
-</ol>
-<p>Point(2,2)在决策树的判决过程</p>
-<ol>
-<li>var p = Point(2, 2)调用是用new 进行调用么？不是，进入否分支，</li>
-<li>上述是用dot调用么？不是，进入否分支，所以this指向window，所以this.x = 2, 也就是window.x = 2</li>
-</ol>
-<hr>
-<p>最后是一个函数用call和apply进行调用的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">    <span class="keyword">this</span>.moveTo = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.x = x;</div><div class="line">        <span class="keyword">this</span>.x = y;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line"><span class="keyword">var</span> p2 = &#123;<span class="attr">x</span>:<span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>&#125;;</div><div class="line">p1.moveTo.apply(p2, [<span class="number">10</span>,<span class="number">10</span>]); <span class="comment">// apply实际上为p2.moveTo(10,10)</span></div><div class="line">p2.x; <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
-<p>p1.moveTo.apply(p2, [10,10])函数在”Javascript this 决策树”中进行判定的过程<br>首选，apply和call这两个方法异常强大，允许切换函数执行的上下文环境(context)， 即this绑定的对象。p1.moveTo.apply(p2, [10,10])实际上是p2.moveTo(10,10)，那么p2.moveTo(10,10)可解释为：</p>
-<ol>
-<li>p2.moveTo(10,10)函数调用时用new进行调用吗？不是，进入“否”分支</li>
-<li>函数是用dot调用吗是，进入是分支，这里的this指向dot前的对象p2, 所以 p2.x =10;</li>
-</ol>
-<p>原作者说道理解下一段话对于理解Javascript函数有很大的作用</p>
-<blockquote>
-<p>Javascript中的函数既可以被当做普通函数执行，也可以作为对象的方法执行，这是导致this含义如此丰富的主要原因。一个函数被执行的时候，会创建一个执行环境，函数的所有的行为均发生在此执行环境中，构建该执行环境时，JavaScript首先会创建arguments变量，其中包含调用函数时传入的参数。接下来创建作用域链。然后初始化变量，首先初始化函数的形参表，值为arguments变量中对应的值，如果arguments变量中没有对应值，则该形参初始化为undefined。如果该函数中含有内部函数，则初始化这些内部函数，如果没有，继续初始化该函数内定义的局部变量，<strong>需要注意的是此时这些变量初始化为undefined，其赋值操作在执行环境创建成功后，函数执行时才会执行，这点对于我们理解Javascript中的变量作用域非常重要</strong>，最后为this变量赋值，如前所述，会根据函数调用方式的不同，赋给this全局对象，当前对象等。至此，函数的执行环境创建成功，函数开始逐行执行，所需变量均从之前构建好的执行环境中读取。</p>
-</blockquote>
+<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><strong>index.js</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> server = <span class="built_in">require</span>(<span class="string">'./server'</span>);</div><div class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./router'</span>);</div><div class="line"><span class="keyword">var</span> requestHandles = <span class="built_in">require</span>(<span class="string">'./requestHandles'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> handle = &#123;&#125;;</div><div class="line">handle[<span class="string">"/"</span>] = requestHandles.start;</div><div class="line">handle[<span class="string">"/start"</span>] = requestHandles.start;</div><div class="line">handle[<span class="string">"/upload"</span>] = requestHandles.upload;</div><div class="line">handle[<span class="string">"/show"</span>] = requestHandles.show;</div><div class="line"></div><div class="line">server.start(router.route, handle);</div></pre></td></tr></table></figure>
+<h2 id="server-js"><a href="#server-js" class="headerlink" title="server.js"></a><strong>server.js</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params">route, handle</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">onRequest</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> pathname = url.parse(request.url).pathname;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Requst for "</span> + pathname + <span class="string">"received"</span>);</div><div class="line">    route(handle, pathname, response, request);</div><div class="line">  &#125;</div><div class="line">  http.createServer(onRequest).listen(<span class="number">8888</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Server has started"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.start = start;</div></pre></td></tr></table></figure>
+<h2 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a><strong>router.js</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">route</span>(<span class="params">handle, pathname, response, request</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"About to route a request for "</span> + pathname);</div><div class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> handle[pathname] === <span class="string">'function'</span>) &#123;</div><div class="line">    handle[pathname](response, request);</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"No request handler found for "</span> + pathname);</div><div class="line">    response.writeHead(<span class="number">404</span>, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/html"</span>&#125;);</div><div class="line">    response.write(<span class="string">"404 Not found"</span>);</div><div class="line">    response.end();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.route = route;</div></pre></td></tr></table></figure>
+<h2 id="requestHandles-js"><a href="#requestHandles-js" class="headerlink" title="requestHandles.js"></a><strong>requestHandles.js</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">"querystring"</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> formidable = <span class="built_in">require</span>(<span class="string">"formidable"</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Requst handler 'start' was called"</span>);</div><div class="line">   <span class="keyword">var</span> body = <span class="string">'&lt;html&gt;'</span>+</div><div class="line">    <span class="string">'&lt;head&gt;'</span>+</div><div class="line">    <span class="string">'&lt;meta http-equiv="Content-Type" content="text/html; '</span>+</div><div class="line">    <span class="string">'charset=UTF-8" /&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/head&gt;'</span>+</div><div class="line">    <span class="string">'&lt;body&gt;'</span>+</div><div class="line">    <span class="string">'&lt;form action="/upload" enctype="multipart/form-data" '</span>+</div><div class="line">    <span class="string">'method="post"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;input type="file" name="upload" multiple="multiple"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;input type="submit" value="Upload file" /&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/form&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/body&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/html&gt;'</span>;</div><div class="line">  response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/html"</span>&#125;);</div><div class="line">  response.write(body);</div><div class="line">  response.end();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params">response, request</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  <span class="keyword">var</span> form = <span class="keyword">new</span> formidable.IncomingForm();</div><div class="line">  form.uploadDir = <span class="string">'tmp'</span>;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  form.parse(request, <span class="function"><span class="keyword">function</span>(<span class="params">error, fields, files</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"parsing done"</span>);</div><div class="line">    fs.renameSync(files.upload.path, <span class="string">"./tmp/test.png"</span>);</div><div class="line">   <span class="comment">//var readStream = fs.createReadStream(files.upload.path);</span></div><div class="line">   <span class="comment">//var writeStream = fs.createWriteStream("./tmp/test.png");</span></div><div class="line">   <span class="comment">//readStream.pipe(writeStream);</span></div><div class="line">   <span class="comment">//readStream.on('end', function() &#123;</span></div><div class="line">   <span class="comment">//    fs.unlinkSync(files.upload.path);</span></div><div class="line">   <span class="comment">//&#125;)</span></div><div class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>:<span class="string">"text/html"</span>&#125;);</div><div class="line">    response.write(<span class="string">"received image:&lt;br/&gt;"</span>);</div><div class="line">    response.write(<span class="string">"&lt;img src='/show'/&gt;"</span>);</div><div class="line">    response.end();</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Requst handler 'show' was called"</span>);</div><div class="line">  fs.readFile(<span class="string">"./tmp/test.png"</span>, <span class="string">"binary"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, file</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(error) &#123;</div><div class="line">      response.writeHead(<span class="number">500</span>,&#123;<span class="string">"Content-Type"</span>:<span class="string">"text/plain"</span>&#125;);</div><div class="line">      response.write(error + <span class="string">"\n"</span>);</div><div class="line">      response.end();</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">      response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>: <span class="string">"image/png"</span>&#125;);</div><div class="line">      response.write(file, <span class="string">"binary"</span>);</div><div class="line">      response.end();</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">exports.start = start;</div><div class="line">exports.upload = upload;</div><div class="line">exports.show = show;</div></pre></td></tr></table></figure>
+<h2 id="上传文件部分常见问题"><a href="#上传文件部分常见问题" class="headerlink" title="上传文件部分常见问题"></a><strong>上传文件部分常见问题</strong></h2><p>在处理函数upload中，直接调用fs.renameSync方法会发生以下错误<br><img src="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/Nodejs.png" alt=""><br>原因是：跨磁盘分区移动或者操作文件会有权限问题。</p>
+<p>有两种解决方法<br>第一种：主要利用fs的createReadStream、createWriteSream和unlinkSync方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params">response, request</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  <span class="keyword">var</span> form = <span class="keyword">new</span> formidable.IncomingForm();</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  form.parse(request, <span class="function"><span class="keyword">function</span>(<span class="params">error, fields, files</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"parsing done"</span>);</div><div class="line">   <span class="comment">// fs.renameSync(files.upload.path, "./tmp/test.png");</span></div><div class="line">    <span class="keyword">var</span> readStream = fs.createReadStream(files.upload.path);</div><div class="line">    <span class="keyword">var</span> writeStream = fs.createWriteStream(<span class="string">"./tmp/test.png"</span>);</div><div class="line">    readStream.pipe(writeStream);</div><div class="line">    readStream.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        fs.unlinkSync(files.upload.path);</div><div class="line">    &#125;)</div><div class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>:<span class="string">"text/html"</span>&#125;);</div><div class="line">    response.write(<span class="string">"received image:&lt;br/&gt;"</span>);</div><div class="line">    response.write(<span class="string">"&lt;img src='/show'/&gt;"</span>);</div><div class="line">    response.end();</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第二种 添加一个 form.uploadDir=’tmp’ 即可（写一个临时路径）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params">response, request</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  <span class="keyword">var</span> form = <span class="keyword">new</span> formidable.IncomingForm();</div><div class="line">  form.uploadDir = <span class="string">'tmp'</span>;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"about to parse"</span>);</div><div class="line">  form.parse(request, <span class="function"><span class="keyword">function</span>(<span class="params">error, fields, files</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"parsing done"</span>);</div><div class="line">    fs.renameSync(files.upload.path, <span class="string">"./tmp/test.png"</span>);</div><div class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>:<span class="string">"text/html"</span>&#125;);</div><div class="line">    response.write(<span class="string">"received image:&lt;br/&gt;"</span>);</div><div class="line">    response.write(<span class="string">"&lt;img src='/show'/&gt;"</span>);</div><div class="line">    response.end();</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -260,7 +237,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -316,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/12/19/JavaScript-this决策树/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2018/01/26/Node入门-书总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +307,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/23/大三寒假/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          大三寒假
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/19/大三上WEBProject项目总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大三上WEB Project项目总结</div>
+    <a href="/2018/01/23/大三寒假/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大三寒假</div>
       <i class="icon-circle-right"></i>
     </a>
   
