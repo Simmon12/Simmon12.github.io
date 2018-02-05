@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>MyBlog</title>
+  <title>Vue打包上线遇到的坑 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="from 前端学渣一名">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyBlog">
-<meta property="og:url" content="https://simmon12.github.io/index.html">
+  <meta name="description" content="vue-cli项目打包出现空白页和路径错误问题对于Vue项目进行打包的时候命令行输入: npm run build   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue打包上线遇到的坑">
+<meta property="og:url" content="https://simmon12.github.io/2018/02/05/Vue打包上线遇到的坑/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="from 前端学渣一名">
+<meta property="og:description" content="vue-cli项目打包出现空白页和路径错误问题对于Vue项目进行打包的时候命令行输入: npm run build   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。">
+<meta property="og:updated_time" content="2018-02-05T06:16:31.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBlog">
-<meta name="twitter:description" content="from 前端学渣一名">
+<meta name="twitter:title" content="Vue打包上线遇到的坑">
+<meta name="twitter:description" content="vue-cli项目打包出现空白页和路径错误问题对于Vue项目进行打包的时候命令行输入: npm run build   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -146,16 +147,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Vue打包上线遇到的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Vue打包上线遇到的坑" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/05/Vue打包上线遇到的坑/">Vue打包上线遇到的坑</a>
+    <h1 class="article-title" itemprop="name">
+      Vue打包上线遇到的坑
     </h1>
   
 
@@ -168,12 +167,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="vue-cli项目打包出现空白页和路径错误问题"><a href="#vue-cli项目打包出现空白页和路径错误问题" class="headerlink" title="vue-cli项目打包出现空白页和路径错误问题"></a>vue-cli项目打包出现空白页和路径错误问题</h3><p>对于Vue项目进行打包的时候<br>命令行输入: npm run build<br>   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。<br>
-        
-          <a class="article-more-a" href="/2018/02/05/Vue打包上线遇到的坑/#more">more >></a>
-        
+        <h3 id="vue-cli项目打包出现空白页和路径错误问题"><a href="#vue-cli项目打包出现空白页和路径错误问题" class="headerlink" title="vue-cli项目打包出现空白页和路径错误问题"></a>vue-cli项目打包出现空白页和路径错误问题</h3><p>对于Vue项目进行打包的时候<br>命令行输入: npm run build<br>   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。<br><a id="more"></a></p>
+<h5 id="1-文件引用路径错误"><a href="#1-文件引用路径错误" class="headerlink" title="1. 文件引用路径错误"></a>1. 文件引用路径错误</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决方式：到config文件夹中打开index.js文件。</span></div><div class="line"><span class="comment">// 文件里面有两个assetsPublicPath属性，更改第一个，也就是更改build里面的assetsPublicPath属性：</span></div><div class="line">build: &#123;</div><div class="line">  <span class="attr">env</span>: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),</div><div class="line">  <span class="attr">index</span>: path.resolve(__dirname, <span class="string">'../dist/index.html'</span>),</div><div class="line">  <span class="attr">assetsRoot</span>: path.resolve(__dirname, <span class="string">'../dist'</span>),</div><div class="line">  <span class="attr">assetsSubDirectory</span>: <span class="string">'static'</span>,</div><div class="line">  <span class="attr">assetsPublicPath</span>: <span class="string">'./'</span>,   <span class="comment">// 原本是 '/' 改为'./'</span></div><div class="line">  productionSourceMap: <span class="literal">true</span>,</div></pre></td></tr></table></figure>
+<h5 id="2-router-view中的内容显示不出来，原因是：路由使用了history模式-这个坑是当你使用了路由之后，在没有后端配合的情况下就手贱打开路由history模式的时候，打包出来的文件也会是一片空白"><a href="#2-router-view中的内容显示不出来，原因是：路由使用了history模式-这个坑是当你使用了路由之后，在没有后端配合的情况下就手贱打开路由history模式的时候，打包出来的文件也会是一片空白" class="headerlink" title="2. router-view中的内容显示不出来，原因是：路由使用了history模式,这个坑是当你使用了路由之后，在没有后端配合的情况下就手贱打开路由history模式的时候，打包出来的文件也会是一片空白"></a>2. router-view中的内容显示不出来，原因是：路由使用了history模式,这个坑是当你使用了路由之后，在没有后端配合的情况下就手贱打开路由history模式的时候，打包出来的文件也会是一片空白</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决方式: 将mode: 'history' 注释掉，将这个模式关闭即可</span></div><div class="line"><span class="keyword">let</span> router = <span class="keyword">new</span> Router(&#123;</div><div class="line">  <span class="comment">// mode: 'history',     // 如果不配置mode，就会使用默认的hash模式，该模式下会将路径格式化为#！开头</span></div><div class="line">  routes: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">redirect</span>: <span class="string">'/home'</span></div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<p>如果要打开这个模式，必须配置好后端，详情可以看<a href="https://router.vuejs.org/zh-cn/essentials/history-mode.html" target="_blank" rel="external">路由配置</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -193,18 +214,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/05/Vue打包上线遇到的坑/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2018/02/05/Vue打包上线遇到的坑/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/26/Node入门-书总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&lt;&lt;Node入门&gt;&gt;书总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -212,277 +289,10 @@
 
 
   
-    <article id="post-Node入门-书总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/26/Node入门-书总结/">&lt;&lt;Node入门&gt;&gt;书总结</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2018/01/26/Node入门-书总结/" class="archive-article-date">
-  	<time datetime="2018-01-26T13:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="读《Node-js入门》的笔记"><a href="#读《Node-js入门》的笔记" class="headerlink" title="读《Node.js入门》的笔记"></a>读《Node.js入门》的笔记</h3><blockquote>
-<p>虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，<a href="https://www.nodebeginner.org/index-zh-cn.html#javascript-and-nodejs">原文地址</a><br>用node.js实现用户上传图片，然后我们将图片显示在浏览器中。<br>完成需要以下四个文件</p>
-<ul>
-<li>index.js</li>
-<li>server.js</li>
-<li>router.js</li>
-<li>requestHandles.js
-        
-          <a class="article-more-a" href="/2018/01/26/Node入门-书总结/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/26/Node入门-书总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-大三寒假" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/大三寒假/">大三寒假</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/23/大三寒假/" class="archive-article-date">
-  	<time datetime="2018-01-23T07:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/23/大三寒假/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript-this决策树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/JavaScript-this决策树/">JavaScript this决策树</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/JavaScript-this决策树/" class="archive-article-date">
-  	<time datetime="2017-12-19T03:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Javascript-this-到底指向什么？"><a href="#Javascript-this-到底指向什么？" class="headerlink" title="Javascript this 到底指向什么？"></a>Javascript this 到底指向什么？</h3><blockquote>
-<p>前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，<a href="http://www.cnblogs.com/isaboy/archive/2015/10/29/javascript_this.html">原文地址</a></p>
-</blockquote>
-<p>不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因此，在不同的场景下，Js中的this所指向的对象是不同的。</p>
-<p>当函数的调用方式不同的时候，JavaScript中this不同，可以是全局对象，当前对象或者是任意的对象。JavaScript中函数调用的几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，使用apply或call调用。作者用了一张决策树图表解释了JavaScript this到底指向什么？
-        
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-大三上WEBProject项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/大三上WEBProject项目总结/">大三上WEB Project项目总结</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/大三上WEBProject项目总结/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基于Java-web的电影影评网站"><a href="#基于Java-web的电影影评网站" class="headerlink" title="基于Java web的电影影评网站"></a>基于Java web的电影影评网站</h3><blockquote>
-<p><a href="https://github.com/Simmon12/web_proj">点此获得源码和实验报告</a></p>
-</blockquote>
-<ol>
-<li><p>这次的项目是和队友一起合作完成，主要涉及到的技术栈如下</p>
-<ul>
-<li>jsp页面</li>
-<li>数据库使用的是MySQL</li>
-</ul>
-</li>
-<li><p>项目存在的优缺点</p>
-<ul>
-<li><p>优点：前端的实现为原生，但是很多好的样式是copy网上代码的，比如涉及CSS sticky footer使得footer能永远在内容的最底部，怎么做到的呢，课后必须花时间学习。登陆框，注册框，遮罩层的样式也是基本用了网上的代码，必须后面自己学习，电影详情页的海报样式必须自学。后端拦截也实现了，md5密码加密</p>
-</li>
-<li><p>缺点：主页登录注册部分每次按按钮都是重新加载页面， 不好，没有做到异步刷新，同样电影详情的评论也没有做到局部刷新和异步更新，增加电影页面用户交互感不好，没有错误提示</p>
-        
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -504,8 +314,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
