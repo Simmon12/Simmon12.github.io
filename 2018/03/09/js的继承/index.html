@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>Javascript练习分析(二) | MyBlog</title>
+  <title>js的继承 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
+  <meta name="description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript练习分析(二)">
-<meta property="og:url" content="https://simmon12.github.io/2017/03/17/Javascript练习分析-二/index.html">
+<meta property="og:title" content="js的继承">
+<meta property="og:url" content="https://simmon12.github.io/2018/03/09/js的继承/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
-<meta property="og:updated_time" content="2017-03-17T17:09:25.939Z">
+<meta property="og:description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
+<meta property="og:updated_time" content="2018-03-09T13:39:25.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript练习分析(二)">
-<meta name="twitter:description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
+<meta name="twitter:title" content="js的继承">
+<meta name="twitter:description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,34 +147,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Javascript练习分析-二" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js的继承" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Javascript练习分析(二)
+      js的继承
     </h1>
   
 
         
-        <a href="/2017/03/17/Javascript练习分析-二/" class="archive-article-date">
-  	<time datetime="2017-03-17T06:26:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+        <a href="/2018/03/09/js的继承/" class="archive-article-date">
+  	<time datetime="2018-03-09T13:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Function-笔记"><a href="#Function-笔记" class="headerlink" title="Function 笔记"></a>Function 笔记</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? ninja.yell(n<span class="number">-1</span>) + <span class="string">"a"</span> : <span class="string">"hiy"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(ninja.yell(<span class="number">4</span>))    <span class="comment">// hiyaaaa</span></div><div class="line"><span class="keyword">var</span> samurai = &#123; <span class="attr">yell</span>: ninja.yell &#125;;</div><div class="line"><span class="keyword">var</span> ninja = <span class="literal">null</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    samurai.yell(<span class="number">4</span>);</div><div class="line">&#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"mistake"</span>) </div><div class="line">&#125;                              <span class="comment">//mistake</span></div></pre></td></tr></table></figure>
-<h5 id="知识点梳理"><a href="#知识点梳理" class="headerlink" title="知识点梳理"></a>知识点梳理</h5><a id="more"></a>
-<p>一.<strong>函数是对象，函数名是指针(是指向函数对象的指针,不会与某个函数绑定)。</strong><br>  换句话说一个函数可能有多个名字。函数的名字仅仅只是一个包含指针的变量而已，因此，计时在不同的环境下执行，全局的某()函数和o.某()函数指向的仍然是同一个函数。<br>二.<strong>函数声明提升(function declaration hoisting)</strong><br>  函数声明和函数表达式是存在区别的。解析器会率先读取函数声明，并使其在执行任何代码前可以访问；而函数表达式则必须等到解析器执行到它所在的代码行，才会真正被解释执行<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(sum1(<span class="number">10</span>,<span class="number">10</span>));  <span class="comment">//20</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum1</span>(<span class="params">n1, n2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 + n2;</div><div class="line">&#125;</div><div class="line">alert(sum2(<span class="number">10</span>,<span class="number">10</span>));  <span class="comment">// sum2 is not a function 运行错误</span></div><div class="line"><span class="keyword">var</span> sum2 = <span class="function"><span class="keyword">function</span>(<span class="params">n1, n2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 + n2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>三.<strong>函数内部有两个特殊的对象，arguments和this。</strong><br>  arguments是一个类数组对象，包含着传入函数中的所有参数。arguments对象有一个叫callee的属性，该属性是一个指针，指向拥有这个arguments对象的函数。在最开始的递归调用代码中，sumurai.yell(4)会调用ninja()函数，但是ninja函数已经变为null，此时调用自然会发生错误。为了消除这种函数名与函数的执行耦合在一起的现象，可以使用arguments.callee。将代码改成如下所示，即可：<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? <span class="built_in">arguments</span>.callee(n<span class="number">-1</span>) + <span class="string">'a'</span> : <span class="string">'hiy'</span>; <span class="comment">//arguments.callee is the function itself.</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>  caller这个属性中保存着调用当前函数的函数的引用，即与callee一样也是一个指针，不过caller指向的是调用当前函数的函数。<br>  解决上面问题的第二种方法是给匿名函数命名<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span> <span class="title">yell</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? yell(n<span class="number">-1</span>) + <span class="string">"a"</span> : <span class="string">"hiy"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>四.<strong>重排序方法–reverse()和sort()</strong><br>默认情况下，sort()方法按升序排列数组项(从小到大),为了实现排序，sort()方法会调用每个数组项的toString()转型方法，然后比较得到的字符串，以确定如何排序，即使数组中的每一项都是数值，sort()方法比较的也是字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</div><div class="line">values.sort();</div><div class="line">alert(values);    <span class="comment">// 0,1,10,15</span></div></pre></td></tr></table></figure></p>
-<p>出现10在5的前面的原因是：虽然数值5小于10，但是在进行字符串比较的时候，”10”位于”5”的前面。可见这种排序方式在很多情况下都不是最佳方案，所以sort()方法可以接收一个比较函数作为参数，以便指定哪个值位于哪个值的前面。比较函数接收两个参数，如果第一个参数应该位于第二个之前则返回一个负数，如果两个参数相等则放回0，如果第一个参数应该位于第二个参数之后则返回一个正数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(value1 &lt; value2)       <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(value1 == value2) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">else</span>                      <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort(compare);</div><div class="line">alert(values);               <span class="comment">//0,1,5,19,15</span></div></pre></td></tr></table></figure></p>
-<p><strong>作为值的函数</strong>,函数名本身就是变量，因此可以从一个函数返回另外一个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可以根据某个对象属性对数组进行排序</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparsionFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">        <span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">        <span class="keyword">if</span>(value1 &lt; value2)        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>( value1 &gt; value2)  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span>                       <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> data = [&#123;<span class="attr">name</span>: <span class="string">"Zhang"</span>, <span class="attr">age</span>: <span class="number">28</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">"feng"</span>, <span class="attr">age</span>: <span class="number">23</span>&#125;];</div><div class="line">data.sort(createComparsionFunction(<span class="string">"name"</span>));</div><div class="line">alert(data[<span class="number">0</span>].name);              <span class="comment">//Zhang</span></div><div class="line">data.sort(createComparsionFunction(<span class="string">"age"</span>));</div><div class="line">alert(data[<span class="number">0</span>].age);               <span class="comment">//23</span></div></pre></td></tr></table></figure></p>
+        <p>一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:<br>1 <strong>通过原型链</strong>, 即子类的原型指向父类的实例从而实现原型共享<br>2 <strong>借用构造函数</strong>, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法<a id="more"></a><br>原型链方式可以<strong>实现所有属性方法共享,但无法做到属性，方法共享</strong>(例如Sub1修改了父类的函数(引用类型的值)，其他所有的子类Sub2、Sub3…想调用旧的函数就无法实现了)<br>而借用构造函数除了能独享属性、方法外还能在子类构造函数中传递参数，但代码无法复用。总体而言就是可以<strong>实现所有属性方法独享，但无法做到属性、方法共享</strong>（例如，Sub1新增了一个函数，然后想让Sub2、Sub3…都可以用的话就无法实现了，只能Sub2、Sub3…各自在构造函数中新增）</p>
+<p>二. 组合继承就是把以上两种继承方式一起使用<br>组合继承把共享的属性，方法用原型链继承实现，独享的属性，方法用借用构造函数实现，几乎完美实现了js的继承。<br>但是存在一个缺点：<br>组合继承在实现的时候需要调用两次超类，使得原本父类函数中的属性和方法存在两个地方，一个是在子类的实例上，一个是在子类的原型上，性能不合格</p>
+<p>三. 基于组合继承的上述缺点，寄生继承就出现了</p>
+<blockquote>
+<p>寄生继承的思路跟工厂模式差不多，就是调用一个仅用于封装继承过程的函数；</p>
+</blockquote>
+<p>这个继承思路也是由克罗克福德推广的，没错！就是实现那个“原型式继承”的大神。（在很多类库源码中都能发现它的身影）简单而言，寄生继承就是不用实例化父类了，直接实例化一个临时副本实现了相同的原型链继承。（即子类的原型指向父类副本的实例从而实现原型共享）</p>
 
       
 
@@ -265,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/03/17/Javascript练习分析-二/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2018/03/09/js的继承/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +278,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/18/常见函数模板总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常见函数模板总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/16/javascript练习分析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript练习分析(一)</div>
+    <a href="/2018/02/11/vue学习之data/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue学习之data</div>
       <i class="icon-circle-right"></i>
     </a>
   

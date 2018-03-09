@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://simmon12.github.io">
-  <title>Javascript练习分析(二) | MyBlog</title>
+  <title>Tag: javascript | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Javascript练习分析(二)">
-<meta property="og:url" content="https://simmon12.github.io/2017/03/17/Javascript练习分析-二/index.html">
+  <meta name="description" content="from 前端学渣一名">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://simmon12.github.io/tags/javascript/page/2/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
-<meta property="og:updated_time" content="2017-03-17T17:09:25.939Z">
+<meta property="og:description" content="from 前端学渣一名">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript练习分析(二)">
-<meta name="twitter:description" content="Function 笔记12345678910111213var ninja = &amp;#123;    yell: function(n) &amp;#123;        return n &amp;gt; 0 ? ninja.yell(n-1) + &quot;a&quot; : &quot;hiy&quot;;    &amp;#125;&amp;#125;;console.log(ninja.yell(4))    // hiyaaaavar samurai =">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="from 前端学渣一名">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,63 +146,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Javascript练习分析-二" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Javascript练习分析(二)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/03/16/javascript练习分析/" class="archive-article-date">
+  	<time datetime="2017-03-16T15:42:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-16</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/16/javascript练习分析/">javascript练习分析(一)</a>
     </h1>
   
 
-        
-        <a href="/2017/03/17/Javascript练习分析-二/" class="archive-article-date">
-  	<time datetime="2017-03-17T06:26:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Function-笔记"><a href="#Function-笔记" class="headerlink" title="Function 笔记"></a>Function 笔记</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? ninja.yell(n<span class="number">-1</span>) + <span class="string">"a"</span> : <span class="string">"hiy"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(ninja.yell(<span class="number">4</span>))    <span class="comment">// hiyaaaa</span></div><div class="line"><span class="keyword">var</span> samurai = &#123; <span class="attr">yell</span>: ninja.yell &#125;;</div><div class="line"><span class="keyword">var</span> ninja = <span class="literal">null</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    samurai.yell(<span class="number">4</span>);</div><div class="line">&#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"mistake"</span>) </div><div class="line">&#125;                              <span class="comment">//mistake</span></div></pre></td></tr></table></figure>
-<h5 id="知识点梳理"><a href="#知识点梳理" class="headerlink" title="知识点梳理"></a>知识点梳理</h5><a id="more"></a>
-<p>一.<strong>函数是对象，函数名是指针(是指向函数对象的指针,不会与某个函数绑定)。</strong><br>  换句话说一个函数可能有多个名字。函数的名字仅仅只是一个包含指针的变量而已，因此，计时在不同的环境下执行，全局的某()函数和o.某()函数指向的仍然是同一个函数。<br>二.<strong>函数声明提升(function declaration hoisting)</strong><br>  函数声明和函数表达式是存在区别的。解析器会率先读取函数声明，并使其在执行任何代码前可以访问；而函数表达式则必须等到解析器执行到它所在的代码行，才会真正被解释执行<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(sum1(<span class="number">10</span>,<span class="number">10</span>));  <span class="comment">//20</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum1</span>(<span class="params">n1, n2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 + n2;</div><div class="line">&#125;</div><div class="line">alert(sum2(<span class="number">10</span>,<span class="number">10</span>));  <span class="comment">// sum2 is not a function 运行错误</span></div><div class="line"><span class="keyword">var</span> sum2 = <span class="function"><span class="keyword">function</span>(<span class="params">n1, n2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 + n2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>三.<strong>函数内部有两个特殊的对象，arguments和this。</strong><br>  arguments是一个类数组对象，包含着传入函数中的所有参数。arguments对象有一个叫callee的属性，该属性是一个指针，指向拥有这个arguments对象的函数。在最开始的递归调用代码中，sumurai.yell(4)会调用ninja()函数，但是ninja函数已经变为null，此时调用自然会发生错误。为了消除这种函数名与函数的执行耦合在一起的现象，可以使用arguments.callee。将代码改成如下所示，即可：<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? <span class="built_in">arguments</span>.callee(n<span class="number">-1</span>) + <span class="string">'a'</span> : <span class="string">'hiy'</span>; <span class="comment">//arguments.callee is the function itself.</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>  caller这个属性中保存着调用当前函数的函数的引用，即与callee一样也是一个指针，不过caller指向的是调用当前函数的函数。<br>  解决上面问题的第二种方法是给匿名函数命名<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ninja = &#123;</div><div class="line">    <span class="attr">yell</span>: <span class="function"><span class="keyword">function</span> <span class="title">yell</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? yell(n<span class="number">-1</span>) + <span class="string">"a"</span> : <span class="string">"hiy"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>四.<strong>重排序方法–reverse()和sort()</strong><br>默认情况下，sort()方法按升序排列数组项(从小到大),为了实现排序，sort()方法会调用每个数组项的toString()转型方法，然后比较得到的字符串，以确定如何排序，即使数组中的每一项都是数值，sort()方法比较的也是字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</div><div class="line">values.sort();</div><div class="line">alert(values);    <span class="comment">// 0,1,10,15</span></div></pre></td></tr></table></figure></p>
-<p>出现10在5的前面的原因是：虽然数值5小于10，但是在进行字符串比较的时候，”10”位于”5”的前面。可见这种排序方式在很多情况下都不是最佳方案，所以sort()方法可以接收一个比较函数作为参数，以便指定哪个值位于哪个值的前面。比较函数接收两个参数，如果第一个参数应该位于第二个之前则返回一个负数，如果两个参数相等则放回0，如果第一个参数应该位于第二个参数之后则返回一个正数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(value1 &lt; value2)       <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(value1 == value2) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">else</span>                      <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort(compare);</div><div class="line">alert(values);               <span class="comment">//0,1,5,19,15</span></div></pre></td></tr></table></figure></p>
-<p><strong>作为值的函数</strong>,函数名本身就是变量，因此可以从一个函数返回另外一个函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可以根据某个对象属性对数组进行排序</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComparsionFunction</span>(<span class="params">propertyName</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1, object2</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">        <span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">        <span class="keyword">if</span>(value1 &lt; value2)        <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>( value1 &gt; value2)  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span>                       <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> data = [&#123;<span class="attr">name</span>: <span class="string">"Zhang"</span>, <span class="attr">age</span>: <span class="number">28</span>&#125;, &#123;<span class="attr">name</span>: <span class="string">"feng"</span>, <span class="attr">age</span>: <span class="number">23</span>&#125;];</div><div class="line">data.sort(createComparsionFunction(<span class="string">"name"</span>));</div><div class="line">alert(data[<span class="number">0</span>].name);              <span class="comment">//Zhang</span></div><div class="line">data.sort(createComparsionFunction(<span class="string">"age"</span>));</div><div class="line">alert(data[<span class="number">0</span>].age);               <span class="comment">//23</span></div></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,97 +187,23 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://simmon12.github.io/2017/03/17/Javascript练习分析-二/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/03/18/常见函数模板总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常见函数模板总结
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/03/16/javascript练习分析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript练习分析(一)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/javascript/">&laquo; Prev</a><a class="page-number" href="/tags/javascript/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -328,9 +226,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

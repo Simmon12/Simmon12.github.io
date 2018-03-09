@@ -148,6 +148,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/09/js的继承/">js的继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/09/js的继承/" class="archive-article-date">
+  	<time datetime="2018-03-09T13:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:<br>1 <strong>通过原型链</strong>, 即子类的原型指向父类的实例从而实现原型共享<br>2 <strong>借用构造函数</strong>, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法
+        
+          <a class="article-more-a" href="/2018/03/09/js的继承/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/09/js的继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue学习之data" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/11/vue学习之data/">vue学习之data</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/11/vue学习之data/" class="archive-article-date">
+  	<time datetime="2018-02-11T09:56:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="data-必须是函数"><a href="#data-必须是函数" class="headerlink" title="data 必须是函数"></a>data 必须是函数</h3><p>data必须是函数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example-2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123; <span class="attr">counter</span>: <span class="number">0</span> &#125;</div><div class="line">Vue.component(<span class="string">'simple-counter'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;button v-on:click="counter += 1"&gt;&#123;&#123; counter &#125;&#125;&lt;/button&gt;'</span>,</div><div class="line">  <span class="comment">// 技术上 data 的确是一个函数了，因此 Vue 不会警告，</span></div><div class="line">  <span class="comment">// 但是我们却给每个组件实例返回了同一个对象的引用</span></div><div class="line">  data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-2'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上面是vue官网给的解释例子，如果data不是一个函数，那么之前所创建的三个组件会共享同一个data对象，因此递增一个counter会影响所有组件，这就会发生错误。我们可以通过为每个组件返回全新的数据对象来修复这个问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">counter</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/11/vue学习之data/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Vue打包上线遇到的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -332,152 +460,6 @@
 
 
   
-    <article id="post-JavaScript-this决策树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/JavaScript-this决策树/">JavaScript this决策树</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/JavaScript-this决策树/" class="archive-article-date">
-  	<time datetime="2017-12-19T03:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Javascript-this-到底指向什么？"><a href="#Javascript-this-到底指向什么？" class="headerlink" title="Javascript this 到底指向什么？"></a>Javascript this 到底指向什么？</h3><blockquote>
-<p>前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，<a href="http://www.cnblogs.com/isaboy/archive/2015/10/29/javascript_this.html">原文地址</a></p>
-</blockquote>
-<p>不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因此，在不同的场景下，Js中的this所指向的对象是不同的。</p>
-<p>当函数的调用方式不同的时候，JavaScript中this不同，可以是全局对象，当前对象或者是任意的对象。JavaScript中函数调用的几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，使用apply或call调用。作者用了一张决策树图表解释了JavaScript this到底指向什么？
-        
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-大三上WEBProject项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/大三上WEBProject项目总结/">大三上WEB Project项目总结</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/大三上WEBProject项目总结/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基于Java-web的电影影评网站"><a href="#基于Java-web的电影影评网站" class="headerlink" title="基于Java web的电影影评网站"></a>基于Java web的电影影评网站</h3><blockquote>
-<p><a href="https://github.com/Simmon12/web_proj">点此获得源码和实验报告</a></p>
-</blockquote>
-<ol>
-<li><p>这次的项目是和队友一起合作完成，主要涉及到的技术栈如下</p>
-<ul>
-<li>jsp页面</li>
-<li>数据库使用的是MySQL</li>
-</ul>
-</li>
-<li><p>项目存在的优缺点</p>
-<ul>
-<li><p>优点：前端的实现为原生，但是很多好的样式是copy网上代码的，比如涉及CSS sticky footer使得footer能永远在内容的最底部，怎么做到的呢，课后必须花时间学习。登陆框，注册框，遮罩层的样式也是基本用了网上的代码，必须后面自己学习，电影详情页的海报样式必须自学。后端拦截也实现了，md5密码加密</p>
-</li>
-<li><p>缺点：主页登录注册部分每次按按钮都是重新加载页面， 不好，没有做到异步刷新，同样电影详情的评论也没有做到局部刷新和异步更新，增加电影页面用户交互感不好，没有错误提示</p>
-        
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -571,15 +553,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vue.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,15 +577,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">template</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,7 +589,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">响应式</a>
+                <a href="javascript:void(0)" class="js-tag color4">template</a>
               </li>
             
             <div class="clearfix"></div>
