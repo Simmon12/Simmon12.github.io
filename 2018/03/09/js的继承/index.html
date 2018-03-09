@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://simmon12.github.io">
   <title>js的继承 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
+  <meta name="description" content="Javascript 的继承一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js的继承">
 <meta property="og:url" content="https://simmon12.github.io/2018/03/09/js的继承/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
-<meta property="og:updated_time" content="2018-03-09T13:39:25.343Z">
+<meta property="og:description" content="Javascript 的继承一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
+<meta property="og:updated_time" content="2018-03-09T13:43:12.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js的继承">
-<meta name="twitter:description" content="一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
+<meta name="twitter:description" content="Javascript 的继承一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:1 通过原型链, 即子类的原型指向父类的实例从而实现原型共享2 借用构造函数, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -167,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:<br>1 <strong>通过原型链</strong>, 即子类的原型指向父类的实例从而实现原型共享<br>2 <strong>借用构造函数</strong>, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法<a id="more"></a><br>原型链方式可以<strong>实现所有属性方法共享,但无法做到属性，方法共享</strong>(例如Sub1修改了父类的函数(引用类型的值)，其他所有的子类Sub2、Sub3…想调用旧的函数就无法实现了)<br>而借用构造函数除了能独享属性、方法外还能在子类构造函数中传递参数，但代码无法复用。总体而言就是可以<strong>实现所有属性方法独享，但无法做到属性、方法共享</strong>（例如，Sub1新增了一个函数，然后想让Sub2、Sub3…都可以用的话就无法实现了，只能Sub2、Sub3…各自在构造函数中新增）</p>
+        <h3 id="Javascript-的继承"><a href="#Javascript-的继承" class="headerlink" title="Javascript 的继承"></a>Javascript 的继承</h3><p>一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:<br>1 <strong>通过原型链</strong>, 即子类的原型指向父类的实例从而实现原型共享<br>2 <strong>借用构造函数</strong>, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法<a id="more"></a><br>原型链方式可以<strong>实现所有属性方法共享,但无法做到属性，方法共享</strong>(例如Sub1修改了父类的函数(引用类型的值)，其他所有的子类Sub2、Sub3…想调用旧的函数就无法实现了)<br>而借用构造函数除了能独享属性、方法外还能在子类构造函数中传递参数，但代码无法复用。总体而言就是可以<strong>实现所有属性方法独享，但无法做到属性、方法共享</strong>（例如，Sub1新增了一个函数，然后想让Sub2、Sub3…都可以用的话就无法实现了，只能Sub2、Sub3…各自在构造函数中新增）</p>
 <p>二. 组合继承就是把以上两种继承方式一起使用<br>组合继承把共享的属性，方法用原型链继承实现，独享的属性，方法用借用构造函数实现，几乎完美实现了js的继承。<br>但是存在一个缺点：<br>组合继承在实现的时候需要调用两次超类，使得原本父类函数中的属性和方法存在两个地方，一个是在子类的实例上，一个是在子类的原型上，性能不合格</p>
 <p>三. 基于组合继承的上述缺点，寄生继承就出现了</p>
 <blockquote>
