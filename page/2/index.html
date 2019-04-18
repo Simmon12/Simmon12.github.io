@@ -148,33 +148,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JavaScript-this决策树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/JavaScript-this决策树/">JavaScript this决策树</a>
+      <a class="article-title" href="/2018/03/09/js的继承/">js的继承</a>
     </h1>
   
 
         
-        <a href="/2017/12/19/JavaScript-this决策树/" class="archive-article-date">
-  	<time datetime="2017-12-19T03:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/03/09/js的继承/" class="archive-article-date">
+  	<time datetime="2018-03-09T13:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Javascript-this-到底指向什么？"><a href="#Javascript-this-到底指向什么？" class="headerlink" title="Javascript this 到底指向什么？"></a>Javascript this 到底指向什么？</h3><blockquote>
-<p>前几天看了一篇技术博客，里面通过使用Javascript决策树的方式讲述了this的指向问题，看完之后收益匪浅，觉得一定要好好地记录下来作笔记，<a href="http://www.cnblogs.com/isaboy/archive/2015/10/29/javascript_this.html">原文地址</a></p>
-</blockquote>
-<p>不同于现在一些主流的面向对象的语言(比如java和c++)this含义是明确且确定的，this指向的都是当前对象，并且在编译时期就绑定了。而JavaScript中的this是在运行期进行绑定的，因此，在不同的场景下，Js中的this所指向的对象是不同的。</p>
-<p>当函数的调用方式不同的时候，JavaScript中this不同，可以是全局对象，当前对象或者是任意的对象。JavaScript中函数调用的几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，使用apply或call调用。作者用了一张决策树图表解释了JavaScript this到底指向什么？
+        <h3 id="Javascript-的继承"><a href="#Javascript-的继承" class="headerlink" title="Javascript 的继承"></a>Javascript 的继承</h3><p>一. 曾经一段时间因为Javascript关于类实现继承的不规范，导致出现了许多实现继承的代码，但实际上，所有的继承方式都是基于以下两种方式:<br>1 <strong>通过原型链</strong>, 即子类的原型指向父类的实例从而实现原型共享<br>2 <strong>借用构造函数</strong>, 即通过js的apply(参数)，call(数组)实现子类调用父类的属性，方法
         
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/#more">more >></a>
+          <a class="article-more-a" href="/2018/03/09/js的继承/#more">more >></a>
         
       
 
@@ -198,7 +194,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/JavaScript-this决策树/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/09/js的继承/">展开全文 >></a>
         </p>
       
 
@@ -216,43 +212,163 @@
 
 
   
-    <article id="post-大三上WEBProject项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue学习之data" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/大三上WEBProject项目总结/">大三上WEB Project项目总结</a>
+      <a class="article-title" href="/2018/02/11/vue学习之data/">vue学习之data</a>
     </h1>
   
 
         
-        <a href="/2017/12/19/大三上WEBProject项目总结/" class="archive-article-date">
-  	<time datetime="2017-12-19T02:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/02/11/vue学习之data/" class="archive-article-date">
+  	<time datetime="2018-02-11T09:56:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基于Java-web的电影影评网站"><a href="#基于Java-web的电影影评网站" class="headerlink" title="基于Java web的电影影评网站"></a>基于Java web的电影影评网站</h3><blockquote>
-<p><a href="https://github.com/Simmon12/web_proj">点此获得源码和实验报告</a></p>
-</blockquote>
-<ol>
-<li><p>这次的项目是和队友一起合作完成，主要涉及到的技术栈如下</p>
+        <h3 id="data-必须是函数"><a href="#data-必须是函数" class="headerlink" title="data 必须是函数"></a>data 必须是函数</h3><p>data必须是函数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example-2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">simple-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">simple-counter</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123; <span class="attr">counter</span>: <span class="number">0</span> &#125;</div><div class="line">Vue.component(<span class="string">'simple-counter'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;button v-on:click="counter += 1"&gt;&#123;&#123; counter &#125;&#125;&lt;/button&gt;'</span>,</div><div class="line">  <span class="comment">// 技术上 data 的确是一个函数了，因此 Vue 不会警告，</span></div><div class="line">  <span class="comment">// 但是我们却给每个组件实例返回了同一个对象的引用</span></div><div class="line">  data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> data</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-2'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上面是vue官网给的解释例子，如果data不是一个函数，那么之前所创建的三个组件会共享同一个data对象，因此递增一个counter会影响所有组件，这就会发生错误。我们可以通过为每个组件返回全新的数据对象来修复这个问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">counter</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/11/vue学习之data/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Vue打包上线遇到的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/05/Vue打包上线遇到的坑/">Vue打包上线遇到的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/05/Vue打包上线遇到的坑/" class="archive-article-date">
+  	<time datetime="2018-02-05T05:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue-cli项目打包出现空白页和路径错误问题"><a href="#vue-cli项目打包出现空白页和路径错误问题" class="headerlink" title="vue-cli项目打包出现空白页和路径错误问题"></a>vue-cli项目打包出现空白页和路径错误问题</h3><p>对于Vue项目进行打包的时候<br>命令行输入: npm run build<br>   执行完毕后，项目中会出现一个新的文件夹dist, 随后将该文件夹dist放到服务器tomcat的webapps目录下就可以了。 但是，当我直接打开dist文件下的index.html文件的时候，页面完全是空白的，主要是以下两个问题引起的。<br>
+        
+          <a class="article-more-a" href="/2018/02/05/Vue打包上线遇到的坑/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/05/Vue打包上线遇到的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Node入门-书总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/26/Node入门-书总结/">&lt;&lt;Node入门&gt;&gt;书总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/26/Node入门-书总结/" class="archive-article-date">
+  	<time datetime="2018-01-26T13:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="读《Node-js入门》的笔记"><a href="#读《Node-js入门》的笔记" class="headerlink" title="读《Node.js入门》的笔记"></a>读《Node.js入门》的笔记</h3><blockquote>
+<p>虽然之前曾经用node写过后台，但是node.js究竟是怎样的，我只是会用而已，所以打算开始恶补nodejs，进行系统的学习，所以首先看了《Node.js入门》这本书，<a href="https://www.nodebeginner.org/index-zh-cn.html#javascript-and-nodejs">原文地址</a><br>用node.js实现用户上传图片，然后我们将图片显示在浏览器中。<br>完成需要以下四个文件</p>
 <ul>
-<li>jsp页面</li>
-<li>数据库使用的是MySQL</li>
-</ul>
-</li>
-<li><p>项目存在的优缺点</p>
-<ul>
-<li><p>优点：前端的实现为原生，但是很多好的样式是copy网上代码的，比如涉及CSS sticky footer使得footer能永远在内容的最底部，怎么做到的呢，课后必须花时间学习。登陆框，注册框，遮罩层的样式也是基本用了网上的代码，必须后面自己学习，电影详情页的海报样式必须自学。后端拦截也实现了，md5密码加密</p>
-</li>
-<li><p>缺点：主页登录注册部分每次按按钮都是重新加载页面， 不好，没有做到异步刷新，同样电影详情的评论也没有做到局部刷新和异步更新，增加电影页面用户交互感不好，没有错误提示</p>
+<li>index.js</li>
+<li>server.js</li>
+<li>router.js</li>
+<li>requestHandles.js
         
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/#more">more >></a>
+          <a class="article-more-a" href="/2018/01/26/Node入门-书总结/#more">more >></a>
         
       
 
@@ -266,7 +382,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -276,7 +392,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/大三上WEBProject项目总结/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/01/26/Node入门-书总结/">展开全文 >></a>
         </p>
       
 
@@ -294,35 +410,26 @@
 
 
   
-    <article id="post-MVVM框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-大三寒假" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/21/MVVM框架/">MVVM框架</a>
+      <a class="article-title" href="/2018/01/23/大三寒假/">大三寒假</a>
     </h1>
   
 
         
-        <a href="/2017/10/21/MVVM框架/" class="archive-article-date">
-  	<time datetime="2017-10-21T03:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
+        <a href="/2018/01/23/大三寒假/" class="archive-article-date">
+  	<time datetime="2018-01-23T07:36:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="MVVM框架笔记"><a href="#MVVM框架笔记" class="headerlink" title="MVVM框架笔记"></a>MVVM框架笔记</h3><blockquote>
-<p>MVVM的英文全称为：Model-View-ViewModel</p>
-<p>核心为：数据模型的数据双向绑定</p>
-</blockquote>
-<ol>
-<li><p>主要包括一下三个部分</p>
-<p><img src="https://raw.githubusercontent.com/Simmon12/MyPicture/master/blogPicture/MVVM.png" alt="MVVM"></p>
-        
-          <a class="article-more-a" href="/2017/10/21/MVVM框架/#more">more >></a>
         
       
 
@@ -335,134 +442,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/21/MVVM框架/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-thought" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/thought/">thought</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/thought/" class="archive-article-date">
-  	<time datetime="2017-09-23T04:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="记大三上一个雨后的中午"><a href="#记大三上一个雨后的中午" class="headerlink" title="记大三上一个雨后的中午"></a>记大三上一个雨后的中午</h4><p>广州的天气和往常一般调皮，毫无征兆地下雨，毫无征兆地停雨。我已经在这个世界留下了20年的痕迹，想起自己身边的人，小学，初中，高中，我们曾经呆在同一间教室，曾经困扰于同一道解析几何题，然而步入大学之后，就好像到了一个分岔路口，每个人似乎都朝着自己的方向渐行渐远。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/thought/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-响应式设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/07/响应式设计/">响应式设计(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/07/响应式设计/" class="archive-article-date">
-  	<time datetime="2017-09-07T15:33:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="响应式网站的概念"><a href="#响应式网站的概念" class="headerlink" title="响应式网站的概念"></a>响应式网站的概念</h3><blockquote>
-<p> 流动网格，弹性图片和媒介查询是响应式设计的三大技术成分，但是崭新的思路也是必不可少的。与其把同样的内容割裂成不同设备专属的体验，我们可以通过媒介查询，渐进增强式地将一个设计在不同的阅读环境中加以优化。这么说并不是要绝对否定在任何情况下使用针对特定设备的独立网站，比如当移动用户在你的网站上的商业目的相比固定电脑用户要单一得多的时候，为两种情况分别输送不同的内容可能是最好的方法。<br>然而我们也不需要固守在那样的设计思路里。如今越来越需要我们的设计能够呈现在一系列多种多样的体验中。响应式设计为我们指出了一条未来的路，是我们终于可以依照万物生灭的规律来进行设计了。<br>来自:   Responsive Web Design<br>作者：伊森·马考特（Ethan Marcotte）<a href="https://site.douban.com/186898/widget/notes/10926516/note/241877629/">https://site.douban.com/186898/widget/notes/10926516/note/241877629/</a><br>
-        
-          <a class="article-more-a" href="/2017/09/07/响应式设计/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">响应式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/07/响应式设计/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/01/23/大三寒假/">展开全文 >></a>
         </p>
       
 
@@ -482,7 +462,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -494,7 +474,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 荔枝喵喵
+    		&copy; 2019 荔枝喵喵
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -573,11 +553,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mpvue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,6 +594,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
