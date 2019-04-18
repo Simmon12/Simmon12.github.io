@@ -10,23 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Mpvue 采坑记录
 
-授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权
-12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; la">
+授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; lan">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mpvue采坑记录">
 <meta property="og:url" content="https://simmon12.github.io/2019/04/18/Mpvue采坑记录/index.html">
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:description" content="Mpvue 采坑记录
 
-授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权
-12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; la">
-<meta property="og:updated_time" content="2019-04-18T06:33:03.593Z">
+授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; lan">
+<meta property="og:updated_time" content="2019-04-18T11:18:26.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mpvue采坑记录">
 <meta name="twitter:description" content="Mpvue 采坑记录
 
-授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权
-12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; la">
+授权登录的实现不主动弹窗，需增加登录授权按钮引导用户主动登录授权12345/** 注意需要在getuserinfo前加上@**  login是回调事件触发后，即接收到用户信息之后**  才会触发，在e.mp.detail.userInfo中**/ &amp;lt;button class=&quot;userinfo-nickname&quot; open-type=&quot;getUserInfo&quot; lan">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -178,11 +175,12 @@
       
         <p>Mpvue 采坑记录</p>
 <ol>
-<li><p>授权登录的实现<br>不主动弹窗，需增加登录授权按钮引导用户主动登录授权</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/** 注意需要在getuserinfo前加上@</div><div class="line">**  login是回调事件触发后，即接收到用户信息之后</div><div class="line">**  才会触发，在e.mp.detail.userInfo中</div><div class="line">**/ </div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"userinfo-nickname"</span> <span class="attr">open-type</span>=<span class="string">"getUserInfo"</span> <span class="attr">lang</span>=<span class="string">"zh_CN"</span> @<span class="attr">getuserinfo</span>=<span class="string">"login"</span>  <span class="attr">v-if</span>=<span class="string">"!logged"</span>&gt;</span>点我登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<li>授权登录的实现<br>不主动弹窗，需增加登录授权按钮引导用户主动登录授权<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/** 注意需要在getuserinfo前加上@</div><div class="line">**  login是回调事件触发后，即接收到用户信息之后</div><div class="line">**  才会触发，在e.mp.detail.userInfo中</div><div class="line">**/ </div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"userinfo-nickname"</span> <span class="attr">open-type</span>=<span class="string">"getUserInfo"</span> <span class="attr">lang</span>=<span class="string">"zh_CN"</span> @<span class="attr">getuserinfo</span>=<span class="string">"login"</span>  <span class="attr">v-if</span>=<span class="string">"!logged"</span>&gt;</span>点我登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>onLoad，mouted，created的实现区别</p>
-</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li>onLoad，mouted，created的实现区别</li>
 </ol>
 <ul>
 <li>在vue中，created是按需加载，当我们进入某个页面时，才会加载当前的created；<br>mpvue中，created并不是按需加载，而是一次性把所有页面的created都加载</li>
@@ -444,11 +442,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
              
               <li class="article-tag-list-item">
